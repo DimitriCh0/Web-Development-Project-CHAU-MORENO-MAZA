@@ -12,22 +12,73 @@
             <header class="site-header">
                 <div class="header-card">
                     <a class="brand-mark" href="./home.html">
-                        <img src="../img/Logo Efrei bleu.png" alt="Efrei logo">
+                        <img src="../img/Logo Efrei bleu.png" alt="Efrei logo" width="3001" height="1501">
+                        <span class="sr-only">Efrei Computer Science</span>
                     </a>
                     <nav class="main-nav" aria-label="Primary navigation">
                         <a href="./home.html">Home</a>
                         <a href="./courses.html">Courses</a>
                         <a href="./faculty.html">Faculty</a>
+                        <a href="./planning.html">Planning</a>
                         <a href="./about.html">About Us</a>
-                        <a href="./contact.html">Contact</a>
                         <a class="is-active" href="./quiz.html">Quiz</a>
                     </nav>
                 </div>
             </header>
 
-            <main class="site-main">
-                <section class="quiz-hero">
-                    <h1>Quiz</h1>
+            <main class="site-main quiz-figma">
+                <section class="quiz-figma-hero">
+                    <div>
+                        <h1>Quiz</h1>
+                        <p>Choose a category, start the quiz, and test your computer science knowledge with instant feedback.</p>
+                    </div>
+                    <img src="../img/Quiz.png" alt="Quiz illustration" width="512" height="512">
+                </section>
+
+                <section class="quiz-categories">
+                    <h2>Categories</h2>
+                    <article class="quiz-category-card" data-quiz-card="programming">
+                        <img src="../img/Programming icon.png" alt="Programming icon" width="512" height="512" loading="lazy">
+                        <div>
+                            <h3>Programming Basics</h3>
+                            <p>Test your knowledge of variables, loops, functions, and more.</p>
+                        </div>
+                        <button type="button" class="start-quiz">Start Quiz</button>
+                    </article>
+                    <article class="quiz-category-card" data-quiz-card="data">
+                        <img src="../img/Database icon.png" alt="Database icon" width="512" height="580" loading="lazy">
+                        <div>
+                            <h3>Data Structures</h3>
+                            <p>Challenge yourself with questions on arrays, stacks, queues, and linked lists.</p>
+                        </div>
+                        <button type="button" class="start-quiz">Start Quiz</button>
+                    </article>
+                    <article class="quiz-category-card" data-quiz-card="systems">
+                        <img src="../img/Computer icon.png" alt="Computer icon" width="512" height="512" loading="lazy">
+                        <div>
+                            <h3>Computer Systems</h3>
+                            <p>Explore questions about hardware, operating systems, and architecture.</p>
+                        </div>
+                        <button type="button" class="start-quiz">Start Quiz</button>
+                    </article>
+                    <article class="quiz-category-card" data-quiz-card="ai">
+                        <img src="../img/AI icon.png" alt="AI icon" width="512" height="512" loading="lazy">
+                        <div>
+                            <h3>AI &amp; Algorithms</h3>
+                            <p>Test your understanding of algorithms, complexity, and artificial intelligence.</p>
+                        </div>
+                        <button type="button" class="start-quiz">Start Quiz</button>
+                    </article>
+                </section>
+
+                <section class="quiz-runner" hidden>
+                    <div class="quiz-runner-card">
+                        <p class="quiz-runner-topic"></p>
+                        <h2 class="quiz-runner-question"></h2>
+                        <div class="quiz-runner-options"></div>
+                        <p class="quiz-runner-feedback"></p>
+                        <button type="button" class="quiz-next" hidden>Next question</button>
+                    </div>
                 </section>
             </main>
 
@@ -36,14 +87,13 @@
                     <div class="footer-column">
                         <h3>Company</h3>
                         <a href="./about.html">About Us</a>
-                        <a href="./contact.html">Contact</a>
                     </div>
                     <div class="footer-column">
                         <h3>Courses</h3>
                         <a href="./courses.html">Engineer</a>
                         <a href="./courses.html">Bachelor</a>
                         <a href="./courses.html">BTS</a>
-                        <a href="./courses.html">Mastère</a>
+                        <a href="./courses.html">Master's</a>
                     </div>
                     <div class="footer-column">
                         <h3>Legal</h3>
@@ -60,7 +110,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <img src="../img/Logo Efrei bleu.png" alt="Efrei logo">
+                    <img src="../img/Logo Efrei bleu.png" alt="Efrei logo" width="3001" height="1501" loading="lazy">
                     <p>© 2026 Efrei Computer Science Department. All rights reserved.</p>
                 </div>
             </footer>
