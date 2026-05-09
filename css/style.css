@@ -1403,6 +1403,7 @@ details[open] > summary > .course-arrow {
     margin: 0 0 22px;
     color: #07122f;
     font-size: 28px;
+    font-weight: 800;
 }
 
 .quiz-runner-options {
