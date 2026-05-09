@@ -1704,7 +1704,7 @@ details[open] > summary > .course-arrow {
 
 .schedule-table {
     width: 100%;
-    min-width: 880px;
+    min-width: 1200px;
     border-collapse: collapse;
     table-layout: fixed;
 }
@@ -2254,7 +2254,7 @@ details[open] > summary > .course-arrow {
     }
 
     .schedule-table {
-        min-width: 700px;
+        min-width: 1000px; 
     }
 
     .schedule-table .time-col {
@@ -2391,5 +2391,18 @@ details[open] > summary > .course-arrow {
     .figma-avatar {
         margin: 0 auto;
     }
+    .schedule-table {
+        min-width: 1000px; 
+    }
 
+    .schedule-table .time-col {
+        width: 70px;
+        font-size: 11px;
+    }
+
+    .schedule-table .calendar-event {
+        padding: 10px;
+        min-height: 120px;
+        font-size: 13px;
+    }
 }
