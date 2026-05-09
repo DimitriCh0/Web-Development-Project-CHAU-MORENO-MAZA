@@ -222,7 +222,7 @@ textarea {
     gap: 24px;
 }
 
-.hero-gallery article {
+.hero-gallery div {
     overflow: hidden;
     border-radius: 22px;
     box-shadow: var(--shadow-soft);
