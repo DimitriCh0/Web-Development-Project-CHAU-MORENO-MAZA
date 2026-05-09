@@ -117,8 +117,15 @@ function initQuiz() {
     var activeQuiz = [];
     var activeIndex = 0;
     var score = 0;
-    var attempts = 1;
     var currentCategoryName = "";
+    var currentCategoryKey = "";
+    
+    var quizAttempts = {
+        programming: 0,
+        data: 0,
+        systems: 0,
+        ai: 0
+    };
 
     function renderRunner() {
         var current = activeQuiz[activeIndex];
@@ -138,8 +145,10 @@ function initQuiz() {
     if (startButtons.length && runner && topic && question && options && feedback && next) {
         startButtons.forEach(function (button) {
             button.addEventListener("click", function () {
-                if (attempts > 3) {
-                    alert("You have reached the maximum number of attempts!");
+                var card = button.closest(".quiz-category-card");
+                var key = card.dataset.quizCard;
+
+                if (quizAttempts[key] >= 3) {
                     return;
                 }
 
@@ -154,10 +163,16 @@ function initQuiz() {
                     return;
                 }
 
-                var res = confirm("Are you sure you want to continue?");
+                currentCategoryName = card.querySelector("h3").textContent;
+                currentCategoryKey = key;
+
+                var res = confirm("Are you sure you want to continue with the " + currentCategoryName + " quiz?");
+                
                 if (res == true) {
                     alert("The quiz will start in 5 seconds!");
                     
+                    document.getElementById("information").scrollIntoView({ behavior: "smooth", block: "center" });
+
                     var timer = 5;
                     var countdownDisplay = document.getElementById("countdown-display");
                     countdownDisplay.textContent = timer + " seconds";
@@ -175,17 +190,14 @@ function initQuiz() {
                             clearInterval(interval);
                             countdownDisplay.textContent = "Here we go! Good luck!";
                             
-                            var card = button.closest(".quiz-category-card");
-                            var key = card.dataset.quizCard;
-                            currentCategoryName = card.querySelector("h3").textContent;
-                            
-                            activeQuiz = quizData[key];
+                            activeQuiz = quizData[currentCategoryKey];
                             activeIndex = 0;
                             score = 0;
                             topic.textContent = currentCategoryName;
                             
                             runner.hidden = false;
                             renderRunner();
+                            
                             runner.scrollIntoView({ behavior: "smooth", block: "center" });
                         }
                     }, 1000);
@@ -258,11 +270,13 @@ function initQuiz() {
         next.addEventListener("click", function () {
             activeIndex += 1;
             if (activeIndex >= activeQuiz.length) {
+                quizAttempts[currentCategoryKey]++;
+                
                 var tbody = document.querySelector("#result tbody");
                 var tr = document.createElement("tr");
                 
                 var td1 = document.createElement("td");
-                td1.textContent = attempts;
+                td1.textContent = quizAttempts[currentCategoryKey];
                 tr.appendChild(td1);
                 
                 var td2 = document.createElement("td");
@@ -275,7 +289,22 @@ function initQuiz() {
                 
                 tbody.appendChild(tr);
 
-                attempts++;
+                var remaining = 3 - quizAttempts[currentCategoryKey];
+                var currentCard = document.querySelector('.quiz-category-card[data-quiz-card="' + currentCategoryKey + '"]');
+                var attemptsDisplay = currentCard.querySelector('.attempts-left');
+                
+                if (attemptsDisplay) {
+                    attemptsDisplay.textContent = remaining + (remaining === 1 ? " attempt left" : " attempts left");
+                }
+
+                if (quizAttempts[currentCategoryKey] >= 3) {
+                    var btnToDisable = currentCard.querySelector('.start-quiz');
+                    if (btnToDisable) {
+                        btnToDisable.disabled = true;
+                        btnToDisable.textContent = "Locked";
+                    }
+                }
+
                 document.getElementById("quiz-reg-form").reset();
                 document.getElementById("countdown-display").textContent = "";
                 
