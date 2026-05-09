@@ -85,54 +85,27 @@ function showNewsletterModal() {
 function initQuiz() {
     var quizData = {
         programming: [
-            {
-                question: "Which keyword declares a block-scoped variable in JavaScript?",
-                options: ["let", "table", "echo"],
-                answer: "let"
-            },
-            {
-                question: "What does a loop help you do?",
-                options: ["Repeat instructions", "Delete the browser", "Change an image format"],
-                answer: "Repeat instructions"
-            }
+            { type: "choice", question: "Which keyword declares a block-scoped variable in JavaScript?", options: ["let", "table", "echo"], answer: "let", points: 4 },
+            { type: "choice", question: "What does a loop help you do?", options: ["Repeat instructions", "Delete the browser", "Change an image format"], answer: "Repeat instructions", points: 3 },
+            { type: "text", question: "Explain the purpose of a function in programming.", keywords: ["reduce", "reusable", "organize", "optimize", "block", "lighten", "exploit", "facilitate"], points: 10 }
         ],
         data: [
-            {
-                question: "Which structure follows Last In, First Out?",
-                options: ["Stack", "Queue", "Array"],
-                answer: "Stack"
-            },
-            {
-                question: "Which structure stores key-value pairs?",
-                options: ["Hash map", "For loop", "HTML tag"],
-                answer: "Hash map"
-            }
+            { type: "choice", question: "Which structure follows Last In, First Out?", options: ["Stack", "Queue", "Array"], answer: "Stack", points: 4 },
+            { type: "choice", question: "Which structure stores key-value pairs?", options: ["Hash map", "For loop", "HTML tag"], answer: "Hash map", points: 3 },
+            { type: "text", question: "Describe what a database is used for.", keywords: ["store", "organize", "manage", "data", "information", "retrieve"], points: 10 }
         ],
         systems: [
-            {
-                question: "What is the role of an operating system?",
-                options: ["Manage hardware and software resources", "Style a web page", "Compress an image only"],
-                answer: "Manage hardware and software resources"
-            },
-            {
-                question: "Which component executes machine instructions?",
-                options: ["CPU", "Router cable", "CSS file"],
-                answer: "CPU"
-            }
+            { type: "choice", question: "What is the role of an operating system?", options: ["Manage hardware and software resources", "Style a web page", "Compress an image only"], answer: "Manage hardware and software resources", points: 4 },
+            { type: "choice", question: "Which component executes machine instructions?", options: ["CPU", "Router cable", "CSS file"], answer: "CPU", points: 3 },
+            { type: "text", question: "Explain the role of RAM in a computer.", keywords: ["memory", "temporary", "fast", "access", "volatile", "store"], points: 10 }
         ],
         ai: [
-            {
-                question: "What does Big O notation describe?",
-                options: ["Algorithmic growth", "Screen brightness", "Database password length"],
-                answer: "Algorithmic growth"
-            },
-            {
-                question: "What is training data used for?",
-                options: ["Teaching a model patterns", "Opening a browser tab", "Naming a CSS class"],
-                answer: "Teaching a model patterns"
-            }
+            { type: "choice", question: "What does Big O notation describe?", options: ["Algorithmic growth", "Screen brightness", "Database password length"], answer: "Algorithmic growth", points: 4 },
+            { type: "choice", question: "What is training data used for?", options: ["Teaching a model patterns", "Opening a browser tab", "Naming a CSS class"], answer: "Teaching a model patterns", points: 3 },
+            { type: "text", question: "Briefly explain how a neural network learns.", keywords: ["weights", "adjust", "train", "data", "patterns", "error", "optimize"], points: 10 }
         ]
     };
+
     var startButtons = document.querySelectorAll(".quiz-category-card .start-quiz");
     var runner = document.querySelector(".quiz-runner");
     var topic = document.querySelector(".quiz-runner-topic");
@@ -140,99 +113,179 @@ function initQuiz() {
     var options = document.querySelector(".quiz-runner-options");
     var feedback = document.querySelector(".quiz-runner-feedback");
     var next = document.querySelector(".quiz-next");
+    
     var activeQuiz = [];
     var activeIndex = 0;
     var score = 0;
+    var attempts = 1;
+    var currentCategoryName = "";
 
     function renderRunner() {
         var current = activeQuiz[activeIndex];
         question.textContent = current.question;
         feedback.textContent = "";
         next.hidden = true;
-        options.innerHTML = current.options.map(function (option) {
-            return '<button type="button">' + escapeHtml(option) + '</button>';
-        }).join("");
+        
+        if (current.type === "choice") {
+            options.innerHTML = current.options.map(function (option) {
+                return '<button type="button">' + escapeHtml(option) + '</button>';
+            }).join("");
+        } else if (current.type === "text") {
+            options.innerHTML = '<textarea id="text-answer" rows="4" placeholder="Type your answer here..."></textarea><button type="button" class="submit-text">Submit Answer</button>';
+        }
     }
 
     if (startButtons.length && runner && topic && question && options && feedback && next) {
         startButtons.forEach(function (button) {
             button.addEventListener("click", function () {
-                var card = button.closest(".quiz-category-card");
-                var key = card.dataset.quizCard;
-                activeQuiz = quizData[key];
-                activeIndex = 0;
-                score = 0;
-                topic.textContent = card.querySelector("h3").textContent;
-                runner.hidden = false;
-                renderRunner();
-                runner.scrollIntoView({ behavior: "smooth", block: "center" });
+                if (attempts > 3) {
+                    alert("You have reached the maximum number of attempts!");
+                    return;
+                }
+
+                var name = document.getElementById("name").value;
+                var surname = document.getElementById("surname").value;
+                var birthdate = document.getElementById("birth_date").value;
+                var mail = document.getElementById("mail").value;
+                var status = document.getElementById("status").value;
+
+                if (name == "" || surname == "" || birthdate == "" || mail == "" || status == "") {
+                    alert("Please fill in all fields");
+                    return;
+                }
+
+                var res = confirm("Are you sure you want to continue?");
+                if (res == true) {
+                    alert("The quiz will start in 5 seconds!");
+                    
+                    var timer = 5;
+                    var countdownDisplay = document.getElementById("countdown-display");
+                    countdownDisplay.textContent = timer + " seconds";
+                    countdownDisplay.style.color = "red";
+                    countdownDisplay.style.fontSize = "1.5em";
+                    countdownDisplay.style.fontWeight = "bold";
+                    countdownDisplay.style.textAlign = "center";
+
+                    var interval = setInterval(function () {
+                        timer--;
+                        console.log(timer);
+                        countdownDisplay.textContent = timer + " seconds";
+
+                        if (timer == 0) {
+                            clearInterval(interval);
+                            countdownDisplay.textContent = "Here we go! Good luck!";
+                            
+                            var card = button.closest(".quiz-category-card");
+                            var key = card.dataset.quizCard;
+                            currentCategoryName = card.querySelector("h3").textContent;
+                            
+                            activeQuiz = quizData[key];
+                            activeIndex = 0;
+                            score = 0;
+                            topic.textContent = currentCategoryName;
+                            
+                            runner.hidden = false;
+                            renderRunner();
+                            runner.scrollIntoView({ behavior: "smooth", block: "center" });
+                        }
+                    }, 1000);
+                } else {
+                    alert("You will be redirected to the home page!");
+                    window.location.href = "./home.html";
+                }
             });
         });
 
         options.addEventListener("click", function (event) {
-            var button = event.target.closest("button");
-            if (!button || button.classList.contains("is-correct") || button.classList.contains("is-wrong")) {
-                return;
-            }
-
             var current = activeQuiz[activeIndex];
-            var buttons = options.querySelectorAll("button");
-            buttons.forEach(function (item) {
-                item.disabled = true;
-                if (item.textContent === current.answer) {
-                    item.classList.add("is-correct");
+            
+            if (current.type === "choice") {
+                var button = event.target.closest("button");
+                if (!button || button.classList.contains("is-correct") || button.classList.contains("is-wrong") || button.classList.contains("submit-text")) {
+                    return;
                 }
-            });
 
-            if (button.textContent === current.answer) {
-                score += 1;
-                feedback.textContent = "Correct!";
-            } else {
-                button.classList.add("is-wrong");
-                feedback.textContent = "Not quite. The correct answer is highlighted.";
+                var buttons = options.querySelectorAll("button");
+                buttons.forEach(function (item) {
+                    item.disabled = true;
+                    if (item.textContent === current.answer) {
+                        item.classList.add("is-correct");
+                    }
+                });
+
+                if (button.textContent === current.answer) {
+                    score += current.points;
+                    feedback.textContent = "Correct!";
+                    feedback.className = "quiz-runner-feedback is-success";
+                } else {
+                    button.classList.add("is-wrong");
+                    feedback.textContent = "Not quite. The correct answer is highlighted.";
+                    feedback.className = "quiz-runner-feedback is-error";
+                }
+
+                next.hidden = false;
+                next.textContent = activeIndex === activeQuiz.length - 1 ? "See score" : "Next question";
+            
+            } else if (current.type === "text") {
+                var submitBtn = event.target.closest(".submit-text");
+                if (!submitBtn) {
+                    return;
+                }
+
+                var textarea = document.getElementById("text-answer");
+                var textValue = textarea.value.toLowerCase();
+                
+                var isCorrect = current.keywords.some(function(kw) {
+                    return textValue.includes(kw);
+                });
+
+                if (isCorrect) {
+                    score += current.points;
+                    feedback.textContent = "Great answer!";
+                    feedback.className = "quiz-runner-feedback is-success";
+                } else {
+                    feedback.textContent = "Answer submitted.";
+                    feedback.className = "quiz-runner-feedback";
+                }
+
+                textarea.disabled = true;
+                submitBtn.disabled = true;
+                next.hidden = false;
+                next.textContent = activeIndex === activeQuiz.length - 1 ? "See score" : "Next question";
             }
-
-            next.hidden = false;
-            next.textContent = activeIndex === activeQuiz.length - 1 ? "See score" : "Next question";
         });
 
         next.addEventListener("click", function () {
             activeIndex += 1;
             if (activeIndex >= activeQuiz.length) {
-                question.textContent = "Quiz complete";
-                options.innerHTML = "";
-                feedback.textContent = "Your score: " + score + " / " + activeQuiz.length + ".";
-                next.hidden = true;
+                var tbody = document.querySelector("#result tbody");
+                var tr = document.createElement("tr");
+                
+                var td1 = document.createElement("td");
+                td1.textContent = attempts;
+                tr.appendChild(td1);
+                
+                var td2 = document.createElement("td");
+                td2.textContent = currentCategoryName;
+                tr.appendChild(td2);
+                
+                var td3 = document.createElement("td");
+                td3.textContent = score;
+                tr.appendChild(td3);
+                
+                tbody.appendChild(tr);
+
+                attempts++;
+                document.getElementById("quiz-reg-form").reset();
+                document.getElementById("countdown-display").textContent = "";
+                
+                runner.hidden = true;
+                document.querySelector(".quiz-results").scrollIntoView({ behavior: "smooth", block: "center" });
                 return;
             }
             renderRunner();
         });
     }
-
-    var quizCards = document.querySelectorAll(".quiz-card");
-
-    quizCards.forEach(function (card) {
-        var buttons = card.querySelectorAll(".quiz-options button");
-        var feedback = card.querySelector(".quiz-feedback");
-
-        buttons.forEach(function (button) {
-            button.addEventListener("click", function () {
-                buttons.forEach(function (item) {
-                    item.classList.remove("is-correct", "is-wrong");
-                });
-
-                if (button.dataset.correct === "true") {
-                    button.classList.add("is-correct");
-                    feedback.textContent = "Correct! Nice work.";
-                    feedback.className = "quiz-feedback is-success";
-                } else {
-                    button.classList.add("is-wrong");
-                    feedback.textContent = "Not quite. Try another answer.";
-                    feedback.className = "quiz-feedback is-error";
-                }
-            });
-        });
-    });
 }
 
 function initPlanning() {

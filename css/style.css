@@ -1994,6 +1994,60 @@ details[open] > summary > .course-arrow {
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
+.quiz-registration,
+.quiz-results {
+    width: 100%;
+    margin: 0 auto 64px;
+    padding: 32px;
+    border: 1px solid #e5eaf3;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 22px rgba(13, 23, 46, 0.1);
+}
+
+.quiz-registration h2,
+.quiz-results h2 {
+    margin: 0 0 24px;
+    color: #07122f;
+    font-size: 28px;
+    text-align: center;
+}
+
+#quiz-reg-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#quiz-reg-form input,
+#quiz-reg-form select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cfd9e8;
+    border-radius: 8px;
+    background: #fbfbf8;
+}
+
+#countdown-display {
+    min-height: 28px;
+    margin: 24px 0 0;
+}
+
+#text-answer {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cfd9e8;
+    border-radius: 10px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.submit-text {
+    margin-top: 10px;
+    background: #2f6eea !important;
+    color: #fff !important;
+}
+
 @keyframes popIn {
     from {
         opacity: 0;
