@@ -2061,10 +2061,10 @@ details[open] > summary > .course-arrow {
     font-family: inherit;
 }
 
-.submit-text {
+.quiz-runner-options .submit-text {
     margin-top: 10px;
-    background: #2f6eea !important;
-    color: #fff !important;
+    background: #2f6eea;
+    color: #fff;
 }
 
 @keyframes popIn {
@@ -2176,10 +2176,6 @@ details[open] > summary > .course-arrow {
         margin-bottom: 16px;
     }
 
-    .main-nav {
-        justify-content: flex-start;
-    }
-
     .hero-gallery,
     .faculty-grid,
     .about-founders,
@@ -2252,21 +2248,6 @@ details[open] > summary > .course-arrow {
         gap: 18px;
         padding: 24px;
     }
-
-    .schedule-table {
-        min-width: 1000px; 
-    }
-
-    .schedule-table .time-col {
-        width: 70px;
-        font-size: 11px;
-    }
-
-    .schedule-table .calendar-event {
-        padding: 8px;
-        min-height: 120px;
-        font-size: 12px;
-    }
 }
 
 @media (max-width: 640px) {
@@ -2310,10 +2291,6 @@ details[open] > summary > .course-arrow {
 
     .footer-bottom {
         align-items: center;
-        text-align: center;
-    }
-
-    .footer-bottom p {
         text-align: center;
     }
 
