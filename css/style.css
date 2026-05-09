@@ -1675,108 +1675,109 @@ details[open] > summary > .course-arrow {
     font-weight: 700;
 }
 
-.week-grid {
-    display: grid;
-    grid-template-columns: 54px repeat(7, minmax(110px, 1fr));
-    min-width: 880px;
+.table-responsive {
+    width: 100%;
     overflow-x: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
 }
 
-.time-column,
-.week-day {
-    min-height: 650px;
+.schedule-table {
+    width: 100%;
+    min-width: 880px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #dadce0;
+    vertical-align: top;
+}
+
+.schedule-table th {
+    height: 40px;
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+    background: #fff;
+}
+
+.schedule-table td {
+    padding: 8px;
+}
+
+.schedule-table .time-col {
+    width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
     border-right: 1px solid #dadce0;
 }
 
-.time-column {
-    display: grid;
-    grid-template-rows: 34px repeat(5, 1fr);
-    color: #333;
-    font-size: 13px;
-    text-align: center;
+.schedule-table .weekend {
+    background: #f2f2f2;
 }
 
-.time-column span {
-    border-bottom: 1px solid #dadce0;
-    padding-top: 10px;
-}
-
-.week-day {
-    position: relative;
-    background: repeating-linear-gradient(to bottom, #fff 0, #fff 122px, #dadce0 123px);
-}
-
-.week-day.weekend {
-    background: repeating-linear-gradient(to bottom, #f2f2f2 0, #f2f2f2 122px, #dadce0 123px);
-}
-
-.week-day > strong {
-    display: block;
-    height: 34px;
-    border-bottom: 1px solid #dadce0;
-    color: #333;
-    font-size: 13px;
-    line-height: 34px;
-    text-align: center;
-}
-
-.calendar-event {
-    position: absolute;
-    left: 8px;
-    right: 8px;
-    top: 150px;
-    min-height: 132px;
-    padding: 10px;
-    border: 1px solid #8fdcb2;
-    border-radius: 6px;
-    background: #bdffdb;
-    color: #2c5a41;
-    font-size: 12px;
+.schedule-table .calendar-event {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    min-height: 140px;
+    border: 1px solid #8fdcb2;
+    background: #bdffdb;
+    color: #2c5a41;
+    font-size: 13px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.week-day:nth-child(3) .calendar-event {
-    top: 360px;
-    background: #dbe7ff;
-    border-color: #9ab7ff;
-    color: #2937b5;
-}
-
-.week-day:nth-child(4) .calendar-event {
-    top: 470px;
-    background: #fff0e8;
-    border-color: #f3b483;
-    color: #8a3f11;
-}
-
-.week-day:nth-child(5) .calendar-event {
-    top: 220px;
-}
-
-.week-day:nth-child(6) .calendar-event {
-    top: 310px;
-    background: #f4e7ff;
-    border-color: #c7a6f3;
-    color: #341d76;
-}
-
-.calendar-event span {
+.schedule-table .calendar-event span {
     display: block;
     font-weight: 800;
+    line-height: 1.3;
+    hyphens: auto;
 }
 
-.calendar-event em {
+.schedule-table .calendar-event em {
     display: block;
     margin: 0;
     font-style: normal;
 }
 
-.calendar-event .choose-slot {
+.schedule-table .calendar-event .choose-slot {
     margin: auto 0 0;
     padding: 6px 10px;
     font-size: 12px;
+}
+
+.schedule-table [data-slot="tuesday-web"] {
+    background: #dbe7ff;
+    border-color: #9ab7ff;
+    color: #2937b5;
+}
+
+.schedule-table [data-slot="wednesday-db"] {
+    background: #fff0e8;
+    border-color: #f3b483;
+    color: #8a3f11;
+}
+
+.schedule-table [data-slot="thursday-cyber"] {
+    background: #bdffdb;
+    border-color: #8fdcb2;
+    color: #2c5a41;
+}
+
+.schedule-table [data-slot="friday-ai"] {
+    background: #f4e7ff;
+    border-color: #c7a6f3;
+    color: #341d76;
 }
 
 .calendar-header {
@@ -2179,8 +2180,19 @@ details[open] > summary > .course-arrow {
         padding: 24px;
     }
 
-    .week-calendar {
-        overflow-x: auto;
+    .schedule-table {
+        min-width: 700px;
+    }
+
+    .schedule-table .time-col {
+        width: 70px;
+        font-size: 11px;
+    }
+
+    .schedule-table .calendar-event {
+        padding: 8px;
+        min-height: 120px;
+        font-size: 12px;
     }
 }
 

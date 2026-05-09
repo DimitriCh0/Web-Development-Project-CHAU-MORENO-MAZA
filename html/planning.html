@@ -77,17 +77,108 @@
                                 <h2>01-07 January 2026</h2>
                                 <span>Week</span>
                             </div>
-                            <div class="week-grid" aria-label="Weekly calendar">
-                                <div class="time-column">
-                                    <span></span><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span>
-                                </div>
-                                <div class="week-day"><strong>Mon</strong><article class="calendar-event planning-slot" data-slot="monday-algorithms"><span>Algorithms support</span><em>10:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
-                                <div class="week-day"><strong>Tue</strong><article class="calendar-event planning-slot" data-slot="tuesday-web"><span>Web development lab</span><em>14:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
-                                <div class="week-day"><strong>Wed</strong><article class="calendar-event planning-slot" data-slot="wednesday-db"><span>Database workshop</span><em>16:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
-                                <div class="week-day"><strong>Thur</strong><article class="calendar-event planning-slot" data-slot="thursday-cyber"><span>Cybersecurity clinic</span><em>11:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
-                                <div class="week-day"><strong>Fri</strong><article class="calendar-event planning-slot" data-slot="friday-ai"><span>AI practice room</span><em>13:30</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
-                                <div class="week-day weekend"><strong>Sat</strong></div>
-                                <div class="week-day weekend"><strong>Sun</strong></div>
+                            <div class="table-responsive">
+                                <table class="schedule-table" aria-label="Weekly calendar">
+                                    <thead>
+                                        <tr>
+                                            <th class="time-col">Time</th>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thur</th>
+                                            <th>Fri</th>
+                                            <th class="weekend">Sat</th>
+                                            <th class="weekend">Sun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="time-col">08:00 - 10:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="weekend"></td>
+                                            <td class="weekend"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time-col">10:00 - 12:00</td>
+                                            <td>
+                                                <article class="calendar-event planning-slot" data-slot="monday-algorithms">
+                                                    <span>Algorithms support</span>
+                                                    <em>10:00</em>
+                                                    <div class="slot-list"></div>
+                                                    <button class="choose-slot" type="button">Choose</button>
+                                                </article>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <article class="calendar-event planning-slot" data-slot="thursday-cyber">
+                                                    <span>Cybersecurity clinic</span>
+                                                    <em>11:00</em>
+                                                    <div class="slot-list"></div>
+                                                    <button class="choose-slot" type="button">Choose</button>
+                                                </article>
+                                            </td>
+                                            <td></td>
+                                            <td class="weekend"></td>
+                                            <td class="weekend"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time-col">12:00 - 14:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <article class="calendar-event planning-slot" data-slot="friday-ai">
+                                                    <span>AI practice room</span>
+                                                    <em>13:30</em>
+                                                    <div class="slot-list"></div>
+                                                    <button class="choose-slot" type="button">Choose</button>
+                                                </article>
+                                            </td>
+                                            <td class="weekend"></td>
+                                            <td class="weekend"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time-col">14:00 - 16:00</td>
+                                            <td></td>
+                                            <td>
+                                                <article class="calendar-event planning-slot" data-slot="tuesday-web">
+                                                    <span>Web development lab</span>
+                                                    <em>14:00</em>
+                                                    <div class="slot-list"></div>
+                                                    <button class="choose-slot" type="button">Choose</button>
+                                                </article>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="weekend"></td>
+                                            <td class="weekend"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time-col">16:00 - 18:00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <article class="calendar-event planning-slot" data-slot="wednesday-db">
+                                                    <span>Database workshop</span>
+                                                    <em>16:00</em>
+                                                    <div class="slot-list"></div>
+                                                    <button class="choose-slot" type="button">Choose</button>
+                                                </article>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="weekend"></td>
+                                            <td class="weekend"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
