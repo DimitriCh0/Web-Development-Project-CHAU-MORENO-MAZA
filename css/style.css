@@ -2077,14 +2077,29 @@ details[open] > summary > .course-arrow {
         display: grid;
     }
 
+    .footer-links {
+        text-align: center;
+    }
+
     .footer-bottom {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+    }
+    
+    .footer-bottom p {
+        text-align: center;
+        font-size: 15px;
+    }
+    
+    .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 
-    .footer-bottom p {
-        text-align: left;
+    .footer-column a {
+        font-size: 16px;
+        margin-bottom: 16px;
     }
 
     .main-nav {
@@ -2146,10 +2161,16 @@ details[open] > summary > .course-arrow {
         grid-template-columns: 1fr;
     }
 
-    .faculty-stats,
     .faculty-cta {
         flex-direction: column;
         align-items: stretch;
+        text-align: center;
+    }
+
+    .faculty-stats {
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
@@ -2286,7 +2307,4 @@ details[open] > summary > .course-arrow {
         margin: 0 auto;
     }
 
-    .faculty-stats {
-        padding: 24px;
-    }
 }
