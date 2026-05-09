@@ -388,10 +388,6 @@ textarea {
     padding: 40px 0;
 }
 
-.courses-accordion {
-    margin-bottom: 72px;
-}
-
 .course-folder,
 .course-subfolder {
     margin: 0;
@@ -671,6 +667,7 @@ details[open] > summary .course-arrow {
 .courses-accordion {
     width: min(960px, 100%);
     margin: 0 auto 72px;
+    margin-bottom: 72px;
 }
 
 .course-program {
