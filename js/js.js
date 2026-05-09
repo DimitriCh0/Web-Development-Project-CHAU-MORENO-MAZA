@@ -14,7 +14,32 @@ document.addEventListener("DOMContentLoaded", function () {
     initQuiz();
     initPlanning();
     initCourseAccessModal();
+    initNavigation();
 });
+
+function initNavigation() {
+    var toggle = document.querySelector(".nav-toggle");
+    var nav = document.querySelector(".main-nav");
+
+    if (!toggle || !nav) {
+        return;
+    }
+
+    toggle.addEventListener("click", function () {
+        var isExpanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", !isExpanded);
+        toggle.classList.toggle("is-active");
+        nav.classList.toggle("is-open");
+    });
+
+    document.addEventListener("click", function (event) {
+        if (nav.classList.contains("is-open") && !nav.contains(event.target) && !toggle.contains(event.target)) {
+            toggle.classList.remove("is-active");
+            toggle.setAttribute("aria-expanded", "false");
+            nav.classList.remove("is-open");
+        }
+    });
+}
 
 function initCourseAccessModal() {
     var links = document.querySelectorAll(".course-link");
