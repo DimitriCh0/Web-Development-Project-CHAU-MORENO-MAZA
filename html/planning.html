@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Efrei Computer Science - Planning</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script type="text/javascript" src="../js/js.js" defer></script>
+    </head>
+    <body data-page="planning">
+        <div class="page-shell">
+            <header class="site-header">
+                <div class="header-card">
+                    <a class="brand-mark" href="./home.html">
+                        <img src="../img/Logo Efrei bleu.png" alt="Efrei logo" width="3001" height="1501">
+                        <span class="sr-only">Efrei Computer Science</span>
+                    </a>
+                    <nav class="main-nav" aria-label="Primary navigation">
+                        <a href="./home.html">Home</a>
+                        <a href="./courses.html">Courses</a>
+                        <a href="./faculty.html">Faculty</a>
+                        <a class="is-active" href="./planning.html">Planning</a>
+                        <a href="./about.html">About Us</a>
+                        <a href="./quiz.html">Quiz</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main class="site-main">
+                <section class="page-title">
+                    <h1>Planning</h1>
+                    <p>Select a calendar slot, enter your name, and register locally for a computer science support session.</p>
+                </section>
+
+                <section class="planning-board" aria-live="polite">
+                    <div class="planning-controls">
+                        <div>
+                            <h2>Student registration</h2>
+                            <p>Registrations are stored only while this page is open. Select a session in the calendar before submitting the form.</p>
+                        </div>
+                        <form class="planning-form">
+                            <label>
+                                <span>First name</span>
+                                <input type="text" name="firstName" autocomplete="given-name" required>
+                            </label>
+                            <label>
+                                <span>Last name</span>
+                                <input type="text" name="lastName" autocomplete="family-name" required>
+                            </label>
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+
+                    <div class="calendar-shell figma-calendar">
+                        <aside class="calendar-sidebar">
+                            <h2>January</h2>
+                            <div class="mini-calendar">
+                                <span>m</span><span>t</span><span>w</span><span>t</span><span>f</span><span>s</span><span>s</span>
+                                <span>01</span><strong>02</strong><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span>
+                                <span>08</span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+                                <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+                            </div>
+                            <h3>Today</h3>
+                            <p><span class="dot green"></span>Algorithms support <strong>10:00</strong></p>
+                            <p><span class="dot red"></span>Database workshop <strong>16:00</strong></p>
+                            <h3>Tomorrow</h3>
+                            <p><span class="dot blue"></span>Web development lab <strong>14:00</strong></p>
+                            <p><span class="dot purple"></span>AI practice room <strong>13:30</strong></p>
+                        </aside>
+                        <div class="week-calendar">
+                            <div class="week-calendar-top">
+                                <h2>01-07 January 2026</h2>
+                                <span>Week</span>
+                            </div>
+                            <div class="week-grid" aria-label="Weekly calendar">
+                                <div class="time-column">
+                                    <span></span><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span>
+                                </div>
+                                <div class="week-day"><strong>Mon</strong><article class="calendar-event planning-slot" data-slot="monday-algorithms"><span>Algorithms support</span><em>10:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
+                                <div class="week-day"><strong>Tue</strong><article class="calendar-event planning-slot" data-slot="tuesday-web"><span>Web development lab</span><em>14:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
+                                <div class="week-day"><strong>Wed</strong><article class="calendar-event planning-slot" data-slot="wednesday-db"><span>Database workshop</span><em>16:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
+                                <div class="week-day"><strong>Thur</strong><article class="calendar-event planning-slot" data-slot="thursday-cyber"><span>Cybersecurity clinic</span><em>11:00</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
+                                <div class="week-day"><strong>Fri</strong><article class="calendar-event planning-slot" data-slot="friday-ai"><span>AI practice room</span><em>13:30</em><div class="slot-list"></div><button class="choose-slot" type="button">Choose</button></article></div>
+                                <div class="week-day weekend"><strong>Sat</strong></div>
+                                <div class="week-day weekend"><strong>Sun</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div class="planning-modal" role="dialog" aria-modal="true" aria-labelledby="planning-warning-title">
+                <div class="planning-modal-card">
+                    <h2 id="planning-warning-title">How this planning works</h2>
+                    <p>This page has no backend. Registrations are stored only in the current browser session and disappear when the page is closed or refreshed.</p>
+                    <button type="button" class="planning-modal-close">I understand</button>
+                </div>
+            </div>
+            <div class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+            <footer class="site-footer">
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <a href="./about.html">About Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Courses</h3>
+                        <a href="./courses.html">Engineer</a>
+                        <a href="./courses.html">Bachelor</a>
+                        <a href="./courses.html">BTS</a>
+                        <a href="./courses.html">Master's</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Follow Us</h3>
+                        <a href="https://www.facebook.com/">Facebook</a>
+                        <a href="https://twitter.com/">Twitter</a>
+                        <a href="https://www.instagram.com/">Instagram</a>
+                        <a href="https://github.com/DimitriCh0/Web-Development-Project-CHAU-MORENO-MAZA">GitHub</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <img src="../img/Logo Efrei bleu.png" alt="Efrei logo" width="3001" height="1501" loading="lazy">
+                    <p>© 2026 Efrei Computer Science Department. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
