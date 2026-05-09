@@ -12,14 +12,15 @@
             <header class="site-header">
                 <div class="header-card">
                     <a class="brand-mark" href="./home.html">
-                        <img src="../img/Logo Efrei bleu.png" alt="Efrei logo">
+                        <img src="../img/Logo Efrei bleu.png" alt="Efrei logo" width="3001" height="1501">
+                        <span class="sr-only">Efrei Computer Science</span>
                     </a>
                     <nav class="main-nav" aria-label="Primary navigation">
                         <a href="./home.html">Home</a>
                         <a class="is-active" href="./courses.html">Courses</a>
                         <a href="./faculty.html">Faculty</a>
+                        <a href="./planning.html">Planning</a>
                         <a href="./about.html">About Us</a>
-                        <a href="./contact.html">Contact</a>
                         <a href="./quiz.html">Quiz</a>
                     </nav>
                 </div>
@@ -28,63 +29,143 @@
             <main class="site-main">
                 <section class="page-title">
                     <h1>Courses</h1>
+                    <p>Browse our courses by program and semester. Course links will open as soon as access is available.</p>
                 </section>
 
                 <section class="courses-accordion">
-                    <details class="course-folder" open>
+                    <details class="course-program" open>
                         <summary>
                             <span class="course-arrow" aria-hidden="true"></span>
-                            Engineering Cycle
+                            <span class="course-title">Engineer (student status)</span>
+                            <span class="course-meta"><span class="folder-icon" aria-hidden="true"></span>6 semesters</span>
                         </summary>
-                        <details class="course-subfolder" open>
-                            <summary>
-                                <span class="course-arrow" aria-hidden="true"></span>
-                                Student Status
-                            </summary>
-                            <div class="course-description">
-                                <p>A five-year path focused on software engineering, algorithms, data structures, operating systems, cloud computing, and applied AI, with a strong emphasis on collaborative projects.</p>
-                            </div>
-                        </details>
-                        <details class="course-subfolder">
-                            <summary>
-                                <span class="course-arrow" aria-hidden="true"></span>
-                                Apprentice Status
-                            </summary>
-                            <div class="course-description">
-                                <p>An alternating rhythm between school and company experience for students who want to deepen their technical skills while working on real production environments.</p>
-                            </div>
-                        </details>
+                        <div class="semester-list">
+                            <details class="semester-folder" open>
+                                <summary><span class="course-arrow" aria-hidden="true"></span>Semester 1</summary>
+                                <div class="subject-list">
+                                    <a class="course-link" href="#">Algorithmics and Python</a>
+                                    <a class="course-link" href="#">Computer Architecture</a>
+                                    <a class="course-link" href="#">Mathematics for Computing</a>
+                                </div>
+                            </details>
+                            <details class="semester-folder">
+                                <summary><span class="course-arrow" aria-hidden="true"></span>Semester 2</summary>
+                                <div class="subject-list">
+                                    <a class="course-link" href="#">Object-Oriented Programming</a>
+                                    <a class="course-link" href="#">Web Fundamentals</a>
+                                    <a class="course-link" href="#">Data Structures</a>
+                                </div>
+                            </details>
+                            <details class="semester-folder">
+                                <summary><span class="course-arrow" aria-hidden="true"></span>Semester 3</summary>
+                                <div class="subject-list">
+                                    <a class="course-link" href="#">Databases and SQL</a>
+                                    <a class="course-link" href="#">Operating Systems</a>
+                                    <a class="course-link" href="#">Software Modeling</a>
+                                </div>
+                            </details>
+                            <details class="semester-folder">
+                                <summary><span class="course-arrow" aria-hidden="true"></span>Semester 4</summary>
+                                <div class="subject-list">
+                                    <a class="course-link" href="#">Networks and Protocols</a>
+                                    <a class="course-link" href="#">Software Engineering</a>
+                                    <a class="course-link" href="#">Human-Computer Interaction</a>
+                                </div>
+                            </details>
+                            <details class="semester-folder">
+                                <summary><span class="course-arrow" aria-hidden="true"></span>Semester 5</summary>
+                                <div class="subject-list">
+                                    <a class="course-link" href="#">Cybersecurity</a>
+                                    <a class="course-link" href="#">Cloud Computing</a>
+                                    <a class="course-link" href="#">Mobile Development</a>
+                                </div>
+                            </details>
+                            <details class="semester-folder">
+                                <summary><span class="course-arrow" aria-hidden="true"></span>Semester 6</summary>
+                                <div class="subject-list">
+                                    <a class="course-link" href="#">Artificial Intelligence</a>
+                                    <a class="course-link" href="#">Full-Stack Project</a>
+                                    <a class="course-link" href="#">DevOps Practices</a>
+                                </div>
+                            </details>
+                        </div>
                     </details>
 
-                    <details class="course-folder" open>
+                    <details class="course-program">
                         <summary>
                             <span class="course-arrow" aria-hidden="true"></span>
-                            Bachelor and Applied Programs
+                            <span class="course-title">Engineer (apprenticeship)</span>
+                            <span class="course-meta"><span class="folder-icon" aria-hidden="true"></span>6 semesters</span>
                         </summary>
-                        <div class="course-description">
-                            <ul>
-                                <li>Bachelor Program: an accessible pathway into development, systems, data, and digital product creation.</li>
-                                <li>Mastère Program: advanced specialization in software architecture, cybersecurity, product engineering, or AI-driven applications.</li>
-                                <li>BTS Program: a practical and progressive curriculum designed to quickly build technical reflexes and professional autonomy.</li>
-                            </ul>
+                        <div class="semester-list compact">
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 1</summary><div class="subject-list"><a class="course-link" href="#">Professional Programming</a><a class="course-link" href="#">Company Project Methods</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 2</summary><div class="subject-list"><a class="course-link" href="#">Enterprise Web Applications</a><a class="course-link" href="#">Agile Teamwork</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 3</summary><div class="subject-list"><a class="course-link" href="#">Data Engineering</a><a class="course-link" href="#">Infrastructure and Deployment</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 4</summary><div class="subject-list"><a class="course-link" href="#">Security in Production</a><a class="course-link" href="#">Service Architecture</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 5</summary><div class="subject-list"><a class="course-link" href="#">Cloud Native Engineering</a><a class="course-link" href="#">Product Engineering</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 6</summary><div class="subject-list"><a class="course-link" href="#">Apprenticeship Final Project</a><a class="course-link" href="#">Technical Leadership</a></div></details>
+                        </div>
+                    </details>
+
+                    <details class="course-program">
+                        <summary>
+                            <span class="course-arrow" aria-hidden="true"></span>
+                            <span class="course-title">Bachelor</span>
+                            <span class="course-meta"><span class="folder-icon" aria-hidden="true"></span>6 semesters</span>
+                        </summary>
+                        <div class="semester-list compact">
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 1</summary><div class="subject-list"><a class="course-link" href="#">Programming Basics</a><a class="course-link" href="#">Digital Culture</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 2</summary><div class="subject-list"><a class="course-link" href="#">Web Integration</a><a class="course-link" href="#">Data Modeling</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Semester 3</summary><div class="subject-list"><a class="course-link" href="#">UX and Interfaces</a><a class="course-link" href="#">API Design</a></div></details>
+                        </div>
+                    </details>
+
+                    <details class="course-program">
+                        <summary>
+                            <span class="course-arrow" aria-hidden="true"></span>
+                            <span class="course-title">BTS</span>
+                            <span class="course-meta"><span class="folder-icon" aria-hidden="true"></span>2 years</span>
+                        </summary>
+                        <div class="semester-list compact">
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Year 1</summary><div class="subject-list"><a class="course-link" href="#">Development Support</a><a class="course-link" href="#">Systems Support</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Year 2</summary><div class="subject-list"><a class="course-link" href="#">Professional Project</a><a class="course-link" href="#">Exam Preparation</a></div></details>
+                        </div>
+                    </details>
+
+                    <details class="course-program">
+                        <summary>
+                            <span class="course-arrow" aria-hidden="true"></span>
+                            <span class="course-title">Master's</span>
+                            <span class="course-meta"><span class="folder-icon" aria-hidden="true"></span>4 semesters</span>
+                        </summary>
+                        <div class="semester-list compact">
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>AI Engineering</summary><div class="subject-list"><a class="course-link" href="#">Deep Learning</a><a class="course-link" href="#">MLOps</a></div></details>
+                            <details class="semester-folder"><summary><span class="course-arrow" aria-hidden="true"></span>Cybersecurity Engineering</summary><div class="subject-list"><a class="course-link" href="#">Pentest Lab</a><a class="course-link" href="#">Security Governance</a></div></details>
                         </div>
                     </details>
                 </section>
             </main>
+
+            <div class="course-access-modal" role="dialog" aria-modal="true" aria-labelledby="course-access-title">
+                <div class="course-access-card">
+                    <h2 id="course-access-title">Course access coming soon</h2>
+                    <p>Access to this course will be available soon. The link is ready to be connected later.</p>
+                    <button type="button" class="course-access-close">Close</button>
+                </div>
+            </div>
 
             <footer class="site-footer">
                 <div class="footer-links">
                     <div class="footer-column">
                         <h3>Company</h3>
                         <a href="./about.html">About Us</a>
-                        <a href="./contact.html">Contact</a>
                     </div>
                     <div class="footer-column">
                         <h3>Courses</h3>
                         <a href="./courses.html">Engineer</a>
                         <a href="./courses.html">Bachelor</a>
                         <a href="./courses.html">BTS</a>
-                        <a href="./courses.html">Mastère</a>
+                        <a href="./courses.html">Master's</a>
                     </div>
                     <div class="footer-column">
                         <h3>Legal</h3>
@@ -101,7 +182,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <img src="../img/Logo Efrei bleu.png" alt="Efrei logo">
+                    <img src="../img/Logo Efrei bleu.png" alt="Efrei logo" width="3001" height="1501" loading="lazy">
                     <p>© 2026 Efrei Computer Science Department. All rights reserved.</p>
                 </div>
             </footer>
