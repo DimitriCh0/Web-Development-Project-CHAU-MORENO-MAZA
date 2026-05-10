@@ -1745,20 +1745,28 @@ details[open] > summary > .course-arrow {
     border: 1px solid #dadce0;
 }
 
-.table {
+.table, .schedule-table {
     width: 100%;
-    min-width: 1000px;
     border-collapse: collapse;
     table-layout: fixed;
+}
+
+.table { 
+    min-width: 1000px; 
+}
+
+.schedule-table { 
+    min-width: 1200px; 
 }
 
 .table th,
-.table td {
+.table td, .schedule-table th,
+.schedule-table td {
     border: 1px solid #dadce0;
     vertical-align: top;
 }
 
-.table th {
+.table th, .schedule-table th {
     height: 40px;
     color: #333;
     font-size: 13px;
@@ -1766,32 +1774,7 @@ details[open] > summary > .course-arrow {
     background: #fff;
 }
 
-.table td {
-    padding: 8px;
-}
-
-.schedule-table {
-    width: 100%;
-    min-width: 1200px;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.schedule-table th,
-.schedule-table td {
-    border: 1px solid #dadce0;
-    vertical-align: top;
-}
-
-.schedule-table th {
-    height: 40px;
-    color: #333;
-    font-size: 13px;
-    font-weight: bold;
-    background: #fff;
-}
-
-.schedule-table td {
+.table td, .schedule-table td {
     padding: 8px;
 }
 
