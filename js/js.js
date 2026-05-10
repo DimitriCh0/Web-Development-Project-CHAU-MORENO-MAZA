@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
+    
     initQuiz();
     initPlanning();
     initCourseAccessModal();
