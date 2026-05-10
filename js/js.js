@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initPlanning();
     initCourseAccessModal();
     initNavigation();
+    initArticlesGrid()
 });
 
 function initNavigation() {
@@ -68,6 +69,29 @@ function initCourseAccessModal() {
         if (event.target === modal) {
             modal.classList.remove("is-visible");
         }
+    });
+}
+
+function initArticlesGrid() {
+    var overlays = document.querySelectorAll(".article-image-overlay");
+    
+    if (!overlays.length) {
+        return;
+    }
+
+    overlays.forEach(function (overlay) {
+        overlay.addEventListener("click", function (event) {
+            // Empêche le double déclenchement si l'overlay a son propre href
+            event.preventDefault(); 
+            
+            // Trouve le vrai lien de lecture à l'intérieur de la même carte
+            var parentCard = overlay.closest(".article-card");
+            var readLink = parentCard ? parentCard.querySelector('a.course-link:not(.article-image-overlay)') : null;
+
+            if (readLink) {
+                readLink.click();
+            }
+        });
     });
 }
 
