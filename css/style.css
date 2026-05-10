@@ -1213,6 +1213,16 @@ details[open] > summary > .course-arrow {
     background: currentColor;
 }
 
+.figma-avatar-img {
+    width: 96px;
+    height: 96px;
+    align-self: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eaf1ff;
+    border: 2px solid currentColor;
+}
+
 .figma-faculty-card h3 {
     margin: 0;
     color: #07122f;
