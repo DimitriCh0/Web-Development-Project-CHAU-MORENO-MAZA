@@ -81,10 +81,8 @@ function initArticlesGrid() {
 
     overlays.forEach(function (overlay) {
         overlay.addEventListener("click", function (event) {
-            // Empêche le double déclenchement si l'overlay a son propre href
             event.preventDefault(); 
             
-            // Trouve le vrai lien de lecture à l'intérieur de la même carte
             var parentCard = overlay.closest(".article-card");
             var readLink = parentCard ? parentCard.querySelector('a.course-link:not(.article-image-overlay)') : null;
 
