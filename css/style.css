@@ -924,7 +924,7 @@ details[open] > summary > .course-arrow {
     color: #002e75;
 }
 
-.course-access-modal {
+.course-access-modal, .newsletter-modal, .planning-modal {
     position: fixed;
     inset: 0;
     z-index: 25;
@@ -937,25 +937,12 @@ details[open] > summary > .course-arrow {
     transition: opacity 0.25s ease;
 }
 
-.newsletter-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 25;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    background: rgba(7, 23, 50, 0.46);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-}
-
-.newsletter-modal.is-visible {
+.newsletter-modal.is-visible, .planning-modal.is-visible, .course-access-modal.is-visible {
     opacity: 1;
     pointer-events: auto;
 }
 
-.newsletter-modal-card {
+.newsletter-modal-card, .planning-modal-card, .course-access-card {
     width: min(460px, 100%);
     padding: 30px;
     border-radius: 8px;
@@ -969,17 +956,17 @@ details[open] > summary > .course-arrow {
     transform: translateY(0) scale(1);
 }
 
-.newsletter-modal-card h2 {
+.newsletter-modal-card h2, .course-access-card h2, .planning-modal-card h2 {
     margin: 0;
     color: var(--text-main);
 }
 
-.newsletter-modal-card p {
+.newsletter-modal-card p, .planning-modal-card p, .course-access-card p {
     margin: 14px 0 22px;
     line-height: 1.55;
 }
 
-.newsletter-modal-close {
+.newsletter-modal-close, .course-access-close {
     border: 0;
     border-radius: 8px;
     cursor: pointer;
@@ -989,43 +976,8 @@ details[open] > summary > .course-arrow {
     font-weight: 700;
 }
 
-.course-access-modal.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.course-access-card {
-    width: min(460px, 100%);
-    padding: 30px;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
-    transform: translateY(14px) scale(0.98);
-    transition: transform 0.25s ease;
-}
-
-.course-access-modal.is-visible .course-access-card {
+.course-access-modal.is-visible .course-access-card, .planning-modal.is-visible .planning-modal-card {
     transform: translateY(0) scale(1);
-}
-
-.course-access-card h2 {
-    margin: 0;
-    color: var(--text-main);
-}
-
-.course-access-card p {
-    margin: 14px 0 22px;
-    line-height: 1.55;
-}
-
-.course-access-close {
-    border: 0;
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 13px 18px;
-    background: var(--deep-blue);
-    color: #fff;
-    font-weight: 700;
 }
 
 .faculty-showcase {
@@ -2056,48 +2008,6 @@ details[open] > summary > .course-arrow {
 
 .calendar-event .remove-registration {
     width: 100%;
-}
-
-.planning-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 20;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    background: rgba(7, 23, 50, 0.46);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-}
-
-.planning-modal.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.planning-modal-card {
-    width: min(480px, 100%);
-    padding: 30px;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
-    transform: translateY(14px) scale(0.98);
-    transition: transform 0.25s ease;
-}
-
-.planning-modal.is-visible .planning-modal-card {
-    transform: translateY(0) scale(1);
-}
-
-.planning-modal-card h2 {
-    margin: 0;
-    color: var(--text-main);
-}
-
-.planning-modal-card p {
-    margin: 14px 0 22px;
-    line-height: 1.55;
 }
 
 .toast-region {
