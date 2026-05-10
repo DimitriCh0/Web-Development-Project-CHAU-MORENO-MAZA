@@ -159,13 +159,29 @@ function initQuiz() {
         question.textContent = current.question;
         feedback.textContent = "";
         next.hidden = true;
+
+        options.textContent = "";
         
         if (current.type === "choice") {
-            options.innerHTML = current.options.map(function (option) {
-                return '<button type="button">' + escapeHtml(option) + '</button>';
-            }).join("");
+            current.options.forEach(function (option) {
+                var btn = document.createElement("button");
+                btn.type = "button";
+                btn.textContent = option;
+                options.appendChild(btn);
+            });
         } else if (current.type === "text") {
-            options.innerHTML = '<textarea id="text-answer" rows="4" placeholder="Type your answer here..."></textarea><button type="button" class="submit-text">Submit Answer</button>';
+            var textarea = document.createElement("textarea");
+            textarea.id = "text-answer";
+            textarea.rows = 4;
+            textarea.placeholder = "Type your answer here...";
+            
+            var submitBtn = document.createElement("button");
+            submitBtn.type = "button";
+            submitBtn.className = "submit-text";
+            submitBtn.textContent = "Submit Answer";
+            
+            options.appendChild(textarea);
+            options.appendChild(submitBtn);
         }
     }
 
@@ -440,18 +456,35 @@ function renderPlanning(registrations) {
         var slot = document.querySelector('[data-slot="' + slotKey + '"]');
         var list = slot.querySelector(".slot-list");
         var students = registrations[slotKey];
+        list.textContent = "";
 
         if (students.length === 0) {
-            list.innerHTML = '<p class="empty-slot">No registration yet.</p>';
+            var emptyPara = document.createElement("p");
+            emptyPara.className = "empty-slot";
+            emptyPara.textContent = "No registration yet.";
+            list.appendChild(emptyPara);
             return;
         }
 
-        list.innerHTML = students.map(function (student, index) {
-            return '<div class="registered-student"><span>' +
-                escapeHtml(student.firstName + " " + student.lastName) +
-                '</span><button type="button" class="remove-registration" data-slot="' +
-                slotKey + '" data-index="' + index + '">Unregister</button></div>';
-        }).join("");
+        students.forEach(function (student, index) {
+            var studentDiv = document.createElement("div");
+            studentDiv.className = "registered-student";
+
+            var nameSpan = document.createElement("span");
+            nameSpan.textContent = student.firstName + " " + student.lastName;
+
+            var removeBtn = document.createElement("button");
+            removeBtn.type = "button";
+            removeBtn.className = "remove-registration";
+            removeBtn.setAttribute("data-slot", slotKey);
+            removeBtn.setAttribute("data-index", index);
+            removeBtn.textContent = "Unregister";
+
+            studentDiv.appendChild(nameSpan);
+            studentDiv.appendChild(removeBtn);
+            
+            list.appendChild(studentDiv);
+        });
     });
 }
 
