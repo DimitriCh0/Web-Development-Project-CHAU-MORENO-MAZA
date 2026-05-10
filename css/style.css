@@ -2176,7 +2176,19 @@ details[open] > summary > .course-arrow {
     .hero-gallery,
     .faculty-grid,
     .about-founders,
-    .footer-links {
+    .footer-links,
+    .quiz-grid,
+    .planning-controls,
+    .planning-form,
+    .calendar-grid,
+    .faculty-showcase,
+    .faculty-feature,
+    .faculty-hero-figma,
+    .faculty-card-grid,
+    .quiz-figma-hero,
+    .quiz-category-card,
+    .figma-calendar, 
+    .about-team-members {
         grid-template-columns: 1fr;
     }
 
@@ -2196,20 +2208,6 @@ details[open] > summary > .course-arrow {
         padding-right: 24px;
     }
 
-    .quiz-grid,
-    .planning-controls,
-    .planning-form,
-    .calendar-grid,
-    .faculty-showcase,
-    .faculty-feature,
-    .faculty-hero-figma,
-    .faculty-card-grid,
-    .quiz-figma-hero,
-    .quiz-category-card,
-    .figma-calendar {
-        grid-template-columns: 1fr;
-    }
-
     .calendar-day,
     .calendar-day:nth-child(5n) {
         border-right: 0;
@@ -2222,10 +2220,6 @@ details[open] > summary > .course-arrow {
     .faculty-profile {
         grid-template-columns: 1fr;
         text-align: center;
-    }
-
-    .about-team-members {
-        grid-template-columns: 1fr;
     }
 
     .faculty-cta {
