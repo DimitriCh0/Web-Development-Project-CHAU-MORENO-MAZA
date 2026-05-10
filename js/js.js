@@ -45,15 +45,18 @@ function initCourseAccessModal() {
     var links = document.querySelectorAll(".course-link");
     var modal = document.querySelector(".course-access-modal");
     var closeButton = document.querySelector(".course-access-close");
-
+    
     if (!links.length || !modal || !closeButton) {
         return;
     }
 
     links.forEach(function (link) {
         link.addEventListener("click", function (event) {
-            event.preventDefault();
-            modal.classList.add("is-visible");
+            var href = link.getAttribute("href");
+            if (!href || href === "#") {
+                event.preventDefault();
+                modal.classList.add("is-visible");
+            }
         });
     });
 
@@ -71,7 +74,7 @@ function initCourseAccessModal() {
 function showNewsletterModal() {
     var modal = document.querySelector(".newsletter-modal");
     var closeButton = document.querySelector(".newsletter-modal-close");
-
+    
     if (!modal || !closeButton) {
         return;
     }
