@@ -508,15 +508,3 @@ function showToast(message, type) {
         toast.remove();
     }, 3200);
 }
-
-function escapeHtml(value) {
-    return value.replace(/[&<>"']/g, function (character) {
-        return {
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': "&quot;",
-            "'": "&#039;"
-        }[character];
-    });
-}
