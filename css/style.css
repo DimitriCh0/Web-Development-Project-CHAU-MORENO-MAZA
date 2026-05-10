@@ -198,7 +198,6 @@ textarea {
     color: var(--text-main);
     font-size: clamp(40px, 4.1vw, 52px);
     line-height: 1.08;
-    letter-spacing: 0;
 }
 
 .hero-copy p,
@@ -259,7 +258,6 @@ textarea {
     color: var(--text-main);
     font-size: clamp(34px, 3.6vw, 52px);
     line-height: 1.08;
-    letter-spacing: 0;
 }
 
 .text-panel p,
@@ -644,7 +642,6 @@ details[open] > summary .course-arrow {
     color: #101522;
     font-size: clamp(42px, 5vw, 64px);
     line-height: 1.08;
-    letter-spacing: 0;
 }
 
 .about-team h1 span {
