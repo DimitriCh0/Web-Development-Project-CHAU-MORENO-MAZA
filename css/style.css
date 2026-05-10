@@ -1793,6 +1793,31 @@ details[open] > summary > .course-arrow {
     border: 1px solid #dadce0;
 }
 
+.table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.table th,
+.table td {
+    border: 1px solid #dadce0;
+    vertical-align: top;
+}
+
+.table th {
+    height: 40px;
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+    background: #fff;
+}
+
+.table td {
+    padding: 8px;
+}
+
 .schedule-table {
     width: 100%;
     min-width: 1200px;
